@@ -15,7 +15,7 @@ namespace MenuSystem
             Console.WriteLine(mainMenu.Title);
             return mainMenu;
         }*/
-        public string Title = "";
+        //public string Title = "";
         
     }
 }

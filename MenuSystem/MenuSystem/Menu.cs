@@ -13,5 +13,10 @@ namespace MenuSystem
         public int ItemCount = 0;
 
         public MenuItem[] MenuItems;
+        public string Show(string title)
+        {
+            Console.WriteLine(Title);
+            return Title;
+        }
     }
 }

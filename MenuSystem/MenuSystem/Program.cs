@@ -34,8 +34,8 @@
             mainMenu.ItemCount++;
 
            
-            //mainMenu.Show();
-            Console.WriteLine(mainMenu.Title);
+            mainMenu.Show();
+            
 
             Console.ReadLine();
         }
