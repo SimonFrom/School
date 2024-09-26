@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,12 +29,12 @@ namespace OrangeTreeSim
         }
 
         //TreeAlive
-        private bool treeAlive = true;
+        private bool treeAlive;
 
         public bool TreeAlive
         {
             get { return treeAlive; }
-            set { treeAlive = value; }
+            set { treeAlive = false; }
         }
 
         //NumOranges
@@ -41,53 +43,46 @@ namespace OrangeTreeSim
         public int NumOranges
         {
             get { return numOranges; }
-            set { numOranges = value; }
         }
 
         //OrangesEaten
         private int orangesEaten;
 
-        public int OrangesEaten
+        public int GetOrangesEaten
         {
             get { return orangesEaten; }
-            set {  orangesEaten = value; }
-        }
-
-        public int EatOrange(int i)
-        {
-            int count = orangesEaten;
-            return count;
         }
 
         public void OneYearPasses()
         {
+            age++;
+            if (age < 80)
             {
                 
-                if (age < 1)
+                height += 2;
+            
+                Console.WriteLine($"The tree's age is {age}, {height} meters tall and have {numOranges} oranges on it.");
+                if (age > 1)
                 {
-                    Age += 1;
-                    height += 2;
-                    Console.WriteLine($"The tree's age is {age}, {height} meters tall and does not have any oranges on it yet.");
-                    
+                    numOranges = 0;
+                    orangesEaten = 0;
+                    numOranges = (age - 1) * 5;
                 }
-                else if (age >= 1)
-                {
-                    Age += 1;
-                    Height += 2;
-                    NumOranges += 5;
-                    Console.WriteLine($"The tree's age is {age}, {height} meters tall and have {numOranges} oranges on it.");
-                    //break;
-                }
-                else if (age > 80)
-                {
-                    TreeAlive = true;
-                    Console.WriteLine("The tree is dead, mourn it, chop it up.. I don't care.");
-                }
+            }
+            else if (age >= 80)
+            {
+                numOranges = 0;
+                treeAlive = false;
             }
         }
 
-
-      
-    }   
+        public void EatOrange(int count)
+        {
+            orangesEaten += count;
+            numOranges -= count;
+            
+        }
+    }
 }
+
 

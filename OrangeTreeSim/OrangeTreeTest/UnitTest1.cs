@@ -76,10 +76,10 @@ namespace OrangeTreeTest
             orangeTree.OneYearPasses();
             orangeTree.EatOrange(1);
 
-            Assert.AreEqual(1, orangeTree.NumOranges);
+            Assert.AreEqual(1, orangeTree.GetOrangesEaten);
 
             orangeTree.EatOrange(3);
-            Assert.AreEqual(4, orangeTree.NumOranges);
+            Assert.AreEqual(4, orangeTree.GetOrangesEaten);
 
             Assert.AreEqual(1, orangeTree.NumOranges);
         }
@@ -93,7 +93,7 @@ namespace OrangeTreeTest
             orangeTree.EatOrange(3);
             orangeTree.OneYearPasses();
             //Assert
-            Assert.AreEqual(0, orangeTree.OrangesEaten);
+            Assert.AreEqual(0, orangeTree.GetOrangesEaten);
             Assert.AreEqual(10, orangeTree.NumOranges);
         }
 
