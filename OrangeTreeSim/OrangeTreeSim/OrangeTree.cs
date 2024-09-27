@@ -53,15 +53,18 @@ namespace OrangeTreeSim
             get { return orangesEaten; }
         }
 
+        //Simulates one years growth
         public void OneYearPasses()
         {
+            //Adds 1 to age
             age++;
+            //If age is less than 80 adds 2 to height
             if (age < 80)
-            {
-                
+            {   
                 height += 2;
             
                 Console.WriteLine($"The tree's age is {age}, {height} meters tall and have {numOranges} oranges on it.");
+                //If age is larger than 1, sets Oranges to 0, OrangesEaten to 0 and sets oranges.
                 if (age > 1)
                 {
                     numOranges = 0;
@@ -69,6 +72,7 @@ namespace OrangeTreeSim
                     numOranges = (age - 1) * 5;
                 }
             }
+            //If age is 80 KILLS the tree and sets Oranges to 0
             else if (age >= 80)
             {
                 numOranges = 0;
@@ -76,6 +80,7 @@ namespace OrangeTreeSim
             }
         }
 
+        //Takes int from unit test and adds and subtracts
         public void EatOrange(int count)
         {
             orangesEaten += count;

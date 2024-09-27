@@ -8,14 +8,7 @@ namespace MenuSystem
 {
     public class MenuItem
     {
-        Menu mainMenu = new Menu();
-        MenuItem mi = new MenuItem();
-        /*public string Show(string mainMenu, string mi)
-        {
-            Console.WriteLine(mainMenu.Title);
-            return mainMenu;
-        }*/
-        //public string Title = "";
+        
         
     }
 }
