@@ -7,33 +7,29 @@ using System.Threading.Tasks;
 
 namespace TiggerAndPooh
 {
-    public class JumpHelper
+    public static class JumpHelper
     {
         
        
         public static string CalculateMeetingPoint(int tiggerX, int tiggerSpeed, int poohX, int poohSpeed)
         {
-            string meetpoint = "";
-            int tiggerLoc;
-            int poohLoc;
-
-
+            string meetpoint = "";         
             for (int i = 0; i < 10000; i++)
-            {
-                tiggerLoc = tiggerX + tiggerSpeed;
-                poohLoc = poohX + poohSpeed;
+            {                
+                tiggerX += tiggerSpeed;
+                poohX += poohSpeed;
 
-                if (tiggerLoc == poohLoc)
+                if (tiggerX == poohX)
                 {
-                    meetpoint = $"{tiggerLoc}, {poohLoc}";
-                    Console.WriteLine(meetpoint);
+                    meetpoint = $"{tiggerX},{poohX}";                    
+                    return meetpoint; 
                 }
-                else
+                if (tiggerX != poohX)
                 {
-                    meetpoint = "NO";
-                    Console.WriteLine(meetpoint);
-                }
+                    meetpoint = "NO";                    
+                }                
             }
+            Console.WriteLine(meetpoint);
             return meetpoint;
         } 
     }

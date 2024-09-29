@@ -1,4 +1,6 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+using System.Text.Json.Serialization;
 
 namespace TiggerAndPooh
 {
@@ -6,8 +8,7 @@ namespace TiggerAndPooh
     {
         static void Main(string[] args)
         {
-            //JumpHelper jumpHelper = new JumpHelper();
-            //jumpHelper.CalculateMeetingPoint();
+
         }
     }
 }
