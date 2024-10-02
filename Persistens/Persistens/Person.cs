@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +14,7 @@ namespace Persistens
         private double height;
         private bool isMarried;
         private int noOfChildren;
-
+        public string title = "";
         public string Name
         {
             get { return name; }
@@ -56,7 +57,7 @@ namespace Persistens
             NoOfChildren = noOfChildren;
             
         }
-
+        
         public string MakeTitle()
         {
             birthdate.ToLongDateString();
@@ -65,8 +66,7 @@ namespace Persistens
             noOfChildren.ToString();
             string title = ($"{name};{birthdate};{height};{isMarried};{noOfChildren}");
             return title;
-            
-            
         }
+        
     }
 }

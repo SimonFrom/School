@@ -4,10 +4,16 @@
     {
         static void Main(string[] args)
         {
-            Person person = new Person("Simon", new DateTime(1950, 10, 02), 175, true, 2);
+            Person person = new Person("Anders Andersen", new DateTime(1975, 8, 24), 175.9, true, 3);
             
-            //Person person = new Person();
+            DataHandler handler = new DataHandler("Data.txt");
+            handler.SavePerson(person);
+
+            Console.Write("Writing person: ");
             Console.WriteLine(person.MakeTitle());
+
+            Console.ReadLine();
+
         }
     }
 }
