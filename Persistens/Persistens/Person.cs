@@ -21,7 +21,7 @@ namespace Persistens
             set { name = value; }
         }
 
-        public DateTime Birthdate
+        public DateTime BirthDate
         {
             get { return birthdate; }
             set { birthdate = value; }
@@ -51,7 +51,7 @@ namespace Persistens
             int noOfChildren)
         {
             Name = name;
-            Birthdate = birthdate;
+            BirthDate = birthdate;
             Height = height;
             IsMarried = isMarried;
             NoOfChildren = noOfChildren;
